@@ -1,13 +1,15 @@
-FROM risingstack/alpine:3.4-v6.9.4-4.2.0
+FROM node:carbon
 
-ENV PORT 3001
+WORKDIR /usr/src/app
 
-EXPOSE 3001
+COPY package*.json ./
 
-COPY package.json package.json
 RUN npm install
 
 COPY . .
 RUN npm run build
+
+ENV PORT 3001
+EXPOSE 3001
 
 CMD ["node", "dist/"]
