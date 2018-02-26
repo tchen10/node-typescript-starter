@@ -1,4 +1,4 @@
-import * as express from 'express'
+import * as express from 'express';
 
 class App {
     public express;
@@ -13,10 +13,10 @@ class App {
         router.get('/', (req, res) => {
            res.json({
                message: 'Hello World!'
-           })
+           });
         });
-        this.express.use('/', router)
+        this.express.use('/', router);
     }
 }
 
-export default new App().express
+export default new App().express;
